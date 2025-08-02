@@ -4,7 +4,11 @@ const rimraf = require('rimraf');
 
 process.env.NODE_ENV = 'production';
 
-const destinationProjects = ['flask-react', 'fastapi-react'];
+const destinationProjects = [
+  // 'flask-react', 
+  'fastapi-react'
+];
+
 const buildDir = path.resolve(__dirname, '../build');
 
 function copyDirectorySync(source, destination) {

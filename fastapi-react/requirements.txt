@@ -1,2 +1,6 @@
-fastapi
-jinja2
+fastapi~=0.116.1
+jinja2~=3.1.6
+httpx~=0.28.1
+uvicorn~=0.35.0
+dotenv~=0.9.9
+starlette~=0.47.2

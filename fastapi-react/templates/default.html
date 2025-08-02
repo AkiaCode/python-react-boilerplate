@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block head %}
-    <title>Python React example</title>
-    {% endblock %}
+    <meta charset="UTF-8">
+    <title>FastAPI + React App</title>
+    <link rel="icon" href="{{ url_for('static', path='favicon.ico') }}">
+
+    {% if not settings.USE_BUNDLE_PROXY %}
+        <link rel="stylesheet" href="{{ url_for('static', path='section/css/main.css') }}">
+    {% endif %}
 </head>
 <body>
-    {% block body %}
-    <script defer="defer" src="/static/section/js/{% block script %}{% endblock %}"></script>
-    {% endblock %}
+    {% block body_section %}{% endblock %}
+
+    {% if settings.USE_BUNDLE_PROXY %}
+        <script src="{{ url_for('static', path='js/bundle.js') }}"></script>
+    {% else %}
+        <script src="{{ url_for('static', path='section/js/main.js') }}"></script>
+    {% endif %}
 </body>
 </html>

@@ -1,9 +1,12 @@
 {% extends "default.html" %}
+
 {% block head %}
-    <title>Python React example</title>
-    <link rel="stylesheet" href="/static/section/css/main.css">
+    {{ super() }}
+    <title>Production - React with FastAPI</title>
+
+    <link rel="stylesheet" href=v"{{ url_for('static', path='section/css/main.css') }}">
 {% endblock %}
-{% block body %}
+
+{% block body_section %}
     <div id="section-home"></div>
-    <script defer="defer" src="/static/section/js/main.js"></script>
 {% endblock %}
